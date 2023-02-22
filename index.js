@@ -1,15 +1,16 @@
- 
+
+
+let arr1 = [1,2,3] // => [1,2]
+
 // pull fn
-function pullFn(arr) {
-    if (arr.length > 0) {
-        let lastItem = arr[arr.length - 1]; 
-        console.log(lastItem);
-        arr.length--;
-        console.log(arr);
-    }else{
-        console.log("Enter a non empty array!");
-        return;
+function pullFn(myArray) {
+    let newArray;
+    for (let i = 0; i < myArray.length -1; i++) {
+    newArray[i] = myArray[i]
+        
     }
+
+    return newArray;
 }
 
 const myArray1 = [1,2,3,4,5];
@@ -24,29 +25,21 @@ pullFn(myArray3);
 pullFn(emptyArr);
 
 
-function pushFn(array, value) {
+function pushFn(myArray, newValue) {
+    const newArray = [newValue]
 
-    let tempValue = value;
-
-    for(let i = 0; i < array.length; i++) {
-        let loopTemp = array[i];
-        array[i] = tempValue;
-        tempValue = loopTemp;
-
+    for (let index = 0; index < myArray.length; index++) {
+        newArray[index+1] = myArray[index]
     }
-
-    array[array.length] = tempValue;
-
-    return array;
-
+    return newArray;
 }
 
 
 let arrTest = [1,2,3,4];
 
-pushFn(arrTest, "Maral");
-pushFn(arrTest, "6");
-pushFn(arrTest, 9);
+arrTest = pushFn(arrTest, "Maral");
+arrTest = pushFn(arrTest, 6);
+arrTest = pushFn(arrTest, 1);
 
 console.log(arrTest);
 
